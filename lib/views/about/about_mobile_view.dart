@@ -9,15 +9,22 @@ class AboutMobileView extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
+
     final deviceWidth = MediaQuery.of(context).size.width;
+
+    double iconSize = deviceWidth * 0.07;
 
     return SafeArea(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           CircleAvatar(
             radius: deviceWidth * 0.3,
             backgroundImage: AssetImage("assets/images/NR.jpg"),
+          ),
+          SizedBox(
+            height: deviceWidth * 0.015,
           ),
           Text(
             "Nandraj Rathod",
@@ -69,7 +76,7 @@ class AboutMobileView extends StatelessWidget {
                 color: primaryColor,
               ),
               title: Text(
-                "nandraj.rathod.009@gmail.com.",
+                "nandraj.rathod.009@gmail.com",
                 style: TextStyle(
                   color: primaryColorDark,
                   fontSize: deviceWidth * 0.04,
@@ -81,7 +88,7 @@ class AboutMobileView extends StatelessWidget {
             color: Colors.white,
             margin: EdgeInsets.symmetric(vertical: 6.0, horizontal: 15.0),
             child: Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(1.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -89,24 +96,33 @@ class AboutMobileView extends StatelessWidget {
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.github),
                     onPressed: () {},
-                    iconSize: deviceWidth * 0.08,
+                    iconSize: iconSize,
                     color: primaryColor,
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.twitter),
                     onPressed: () {},
-                    iconSize: deviceWidth * 0.08,
+                    iconSize: iconSize,
                     color: primaryColor,
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.medium),
                     onPressed: () {},
-                    iconSize: deviceWidth * 0.08,
+                    iconSize: iconSize,
+                    color: primaryColor,
+                  ),
+                  IconButton(
+                    icon: FaIcon(FontAwesomeIcons.reddit),
+                    onPressed: () {},
+                    iconSize: iconSize,
                     color: primaryColor,
                   ),
                 ],
               ),
             ),
+          ),
+          SizedBox(
+            height: deviceWidth * 0.02,
           ),
         ],
       ),
